@@ -1,6 +1,7 @@
 package users
+package groups
 
-// Permissions describe a user's permissions.
+// Permissions describe a user's or group's permissions.
 type Permissions struct {
 	Admin    bool `json:"admin"`
 	Execute  bool `json:"execute"`
