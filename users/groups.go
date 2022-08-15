@@ -93,12 +93,7 @@ func (g *Group) Clean(baseScope string, fields ...string) error {
 	return nil
 }
 
-// FullPath gets the full path for a user's relative path.
-func (g *Group) FullPath(path string) string {
-	return afero.FullBaseFsPath(u.Fs.(*afero.BasePathFs), path)
-}
-
-// CanExecute checks if an user can execute a specific command.
+// CanExecute checks if an user in the group can execute a specific command.
 func (g *Group) CanExecute(command string) bool {
 	if !g.Perm.Execute {
 		return false
