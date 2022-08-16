@@ -21,6 +21,9 @@
       />
     </p>
 
+    <p v-if="groups">
+      <label for="groups">
+    </p>
     <p>
       <label for="scope">{{ $t("settings.scope") }}</label>
       <input
@@ -28,6 +31,7 @@
         :placeholder="scopePlaceholder"
         class="input input--block"
         type="text"
+        search: "",
         v-model="user.scope"
         id="scope"
       />
@@ -71,6 +75,7 @@ import Languages from "./Languages";
 import Rules from "./Rules";
 import Permissions from "./Permissions";
 import Commands from "./Commands";
+import Groups from "./Groups"
 import { enableExec } from "@/utils/constants";
 
 export default {
@@ -86,6 +91,7 @@ export default {
     Languages,
     Rules,
     Commands,
+    Groups
   },
   props: ["user", "createUserDir", "isNew", "isDefault"],
   created() {
